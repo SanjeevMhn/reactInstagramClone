@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'instagram_font';
+    src: url('./assets/fonts/fontspring-demo-blue_vinyl_regular_ps_ot-webfont.woff2') format('woff2'),
+         url('./assets/fonts/fontspring-demo-blue_vinyl_regular_ps_ot-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.home-link{
+    font-family: 'instagram_font';
+    font-weight: normal;
+    font-style: normal
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
