@@ -61,12 +61,12 @@ const SideNav = () => {
                 {
                     navItems.map((nav, index) => {
                         return (
-                            <li className="nav-item" key={nav.id}>
-                                <a href={nav.link} className="nav-link flex items-end">
-                                    <span className="icon-container w-[20px] h-[20px] flex-[0_0_20px] inline-flex justify-center items-end">
+                            <li className="nav-item py-4" key={nav.id}>
+                                <a href={nav.link} className="nav-link flex items-center">
+                                    <span className="icon-container w-[25px] h-[25px] flex-[0_0_25px] inline-flex justify-center items-end text-3xl">
                                         <ion-icon name={nav.icon}></ion-icon>
                                     </span>
-                                    <span className="link-text pl-3 leading-3">{nav.name}</span>
+                                    <span className="link-text pl-3 leading-none text-md font-light">{nav.name}</span>
                                 </a>
                             </li>
                         )
