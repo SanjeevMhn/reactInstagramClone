@@ -6,7 +6,7 @@ const Layout = ({children}) => {
     return(
         <div className="page-wrapper">
             <SideNav />
-            <main className='ml-[225px]'>
+            <main className='lg:ml-[225px]'>
                 {children}
             </main>
         </div>
