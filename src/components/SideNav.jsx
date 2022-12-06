@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 const SideNav = () => {
 
@@ -8,14 +9,14 @@ const SideNav = () => {
             "name": "Home",
             "icon": "home-outline",
             "activeIcon": "home",
-            "link": "#",
+            "link": "/",
         },
         {
             "id": "search",
             "name": "Search",
             "icon": "search-outline",
             "activeIcon": "search",
-            "link": "#",
+            "link": "/search",
         },
         {
             "id": "explore",
@@ -66,14 +67,14 @@ const SideNav = () => {
             "name": "Home",
             "icon": "home-outline",
             "activeIcon": "home",
-            "link": "#",
+            "link": "/",
         },
         {
             "id": "explore",
             "name": "Explore",
             "icon": "compass-outline",
             "activeIcon": "compass",
-            "link": "#",
+            "link": "/search",
         },
         {
             "id": "create",
@@ -98,12 +99,12 @@ const SideNav = () => {
 
     ];
 
-    const SideNavItem = ({ link, icon, name, img, index, arr }) => {
+    const SideNavItem = ({ link, icon, name, img }) => {
         {
             return (
                 name === "Profile" ? (
                     <li className="nav-item py-4 flex justify-center md:justify-between flex-grow md:flex-grow-0">
-                        <a href={link} className="nav-link flex items-center">
+                        <NavLink to={link} className="nav-link flex items-center">
                             <span className="img-container w-[25px] h-[25px] flex-[0_0_25px] rounded-full overflow-hidden flex items-center justify-center">
                                 {
                                     img ? (
@@ -114,16 +115,16 @@ const SideNav = () => {
                                 }
                             </span>
                             <span className="link-text pl-3 leading-none text-md font-light hidden lg:inline-block">{name}</span>
-                        </a>
+                        </NavLink>
                     </li>
                 ) : (
                     <li className="nav-item py-4 flex justify-center md:justify-between flex-grow md:flex-grow-0">
-                        <a href={link} className="nav-link flex items-center">
+                        <NavLink to={link} className="nav-link flex items-center">
                             <span className="icon-container w-[25px] h-[25px] flex-[0_0_25px] inline-flex justify-center items-end text-3xl">
                                 <ion-icon name={icon}></ion-icon>
                             </span>
                             <span className="link-text pl-3 leading-none text-md font-light hidden lg:inline-block">{name}</span>
-                        </a>
+                        </NavLink>
                     </li>
                 )
 
@@ -141,6 +142,7 @@ const SideNav = () => {
                                 <SideNavItem
                                     link={nav.link}
                                     icon={nav.icon}
+                                    activeIcon={nav.activeIcon}
                                     name={nav.name}
                                     key={nav.id}
                                     img={nav.img} />
@@ -168,6 +170,7 @@ const SideNav = () => {
                                     name={nav.name}
                                     key={nav.id}
                                     img={nav.img}
+                                    activeIcon={nav.activeIcon}
                                 />
                             )
                         })
