@@ -2,7 +2,7 @@ import React from 'react';
 
 const PostCard = (props) => {
     return (
-        <article className="post-card pb-3 w-[40%]">
+        <article className="post-card pb-3 w-[95%] md:w-[75%] lg:w-[40%] max-w-[470px]">
             <div className="inner-container w-full border-gray-300 rounded-lg border overflow-hidden">
                 <div className="post-header py-2 px-3 bg-white flex justify-between">
                     <div className="poster-info flex items-center">

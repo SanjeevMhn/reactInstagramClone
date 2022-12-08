@@ -134,7 +134,7 @@ const SideNav = () => {
     }
     return (
         <>
-            <nav className="main-nav-sp flex items-center justify-center md:hidden w-screen h-[50px] fixed bottom-0 border-t-2 border-t-gray-300">
+            <nav className="main-nav-sp flex items-center justify-center md:hidden w-screen h-[50px] fixed bottom-0 border-t-2 border-t-gray-300 bg-white z-50">
                 <ul className="nav-list flex w-full">
                     {
                         navItemsSp.map((nav, index) => {
