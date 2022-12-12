@@ -1,29 +1,37 @@
 import React from 'react';
 
 const PostCard = (props) => {
+    const { user, img, likes, description } = props;
     return (
         <article className="post-card pb-3 w-[95%] md:w-[75%] lg:w-[40%] max-w-[470px]">
             <div className="inner-container w-full border-gray-300 rounded-lg border overflow-hidden">
                 <div className="post-header py-2 px-3 bg-white flex justify-between">
                     <div className="poster-info flex items-center">
                         <div className="poster-profile h-[42px] w-[42px] relative flex items-center justify-center">
-                            <div className="img-container h-4/5 w-4/5">
-                                <img src="../src/assets/images/default.png" alt="" className="w-full h-full object-cover" />
+                            <div className="img-container h-full w-full overflow-hidden rounded-full">
+                                <img src={user.profile_img} alt="" className="w-full h-full object-cover" />
                             </div>
                         </div>
                         <div className="poster-data flex flex-col ml-2">
-                            <span className="poster-name text-[15px] font-medium">Lorem, ipsum.</span>
-                            <span className="poster-location text-[12px] font-light">Lorem, ipsum dolor.</span>
+                            <span className="poster-name text-[15px] font-medium">{user.name}</span>
+                            <span className="poster-location text-[12px] font-light">{user.location}</span>
                         </div>
                     </div>
-                    <button className="options">
-                        <div className="icon-container w-[25px] h-[25px] flex items-center justify-center">
-                            <ion-icon name="ellipsis-horizontal"></ion-icon>
+                    <div className="options-container flex items-center gap-2">
+                        <div className="follow-user-container">
+                            <button className="follow-user bg-[#00a2f8] text-white text-sm leading-none h-full py-3 px-4 rounded-lg">
+                                <p className="label-text">Follow</p>
+                            </button>
                         </div>
-                    </button>
+                        <button className="options">
+                            <div className="icon-container w-[25px] h-[25px] flex items-center justify-center">
+                                <ion-icon name="ellipsis-horizontal"></ion-icon>
+                            </div>
+                        </button>
+                    </div>
                 </div>
-                <div className="media-container relative pt-[100%]">
-                    <img src="../src/assets/images/sample.jpg" alt="" className="absolute top-0 left-0 w-full h-full object-contain" />
+                <div className="media-container relative pt-[100%] bg-black">
+                    <img src={img} alt="" className="absolute top-0 left-0 w-full h-full object-contain" />
                 </div>
                 <div className="post-footer">
                     <div className="post-actions">
@@ -51,12 +59,12 @@ const PostCard = (props) => {
                         </ul>
                     </div>
                     <div className="likes-counter px-3 text-[13px] font-semibold text-gray-700">
-                        23000 likes
+                        {likes} likes
                     </div>
                     <div className="post-caption-data text-[13px] px-3">
                         <span className="poster-name font-semibold">
-                            Lorem, ipsum&nbsp;&nbsp;<span className="post-caption font-light">
-                                Lorem ipsum dolor sit amet.
+                            {user.name}&nbsp;&nbsp;<span className="post-caption font-light">
+                                {description}
                             </span>
                         </span>
                     </div>
